@@ -191,7 +191,7 @@ def save_generated_images(generator, epoch):
 
     print(f"Generated images saved for epoch {epoch}.")
 
-cross_entropy = tf.keras.losses.BinaryCrossentropy(from_logits=False)
+cross_entropy = tf.keras.losses.BinaryCrossentropy()
 
 def generator_loss(Xhat):
     return cross_entropy(tf.ones_like(Xhat), Xhat)
